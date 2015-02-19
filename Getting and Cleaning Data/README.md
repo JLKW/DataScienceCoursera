@@ -1,7 +1,3 @@
----
-title: "README"
-output: html_document
----
 
 ## Getting and Cleaning Data Course Project
 
