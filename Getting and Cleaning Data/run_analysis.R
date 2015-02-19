@@ -2,7 +2,7 @@
 # 1. Merges the training and the test sets to create one data set. ---------------------
 
 #unzip files
-#unzip("getdata-projectfiles-UCI HAR Dataset.zip")
+unzip("getdata-projectfiles-UCI HAR Dataset.zip")
 
 #combine X_test and X_train into features sub-table 
 xtest <- read.table("./UCI HAR Dataset/test/X_test.txt",header=FALSE)
