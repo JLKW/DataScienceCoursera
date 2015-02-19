@@ -4,23 +4,25 @@
 #unzip files
 #unzip("getdata-projectfiles-UCI HAR Dataset.zip")
 
-#read xtest and xtrain into data table 
+#combine X_test and X_train into features sub-table 
 xtest <- read.table("./UCI HAR Dataset/test/X_test.txt",header=FALSE)
 xtrain <- read.table("./UCI HAR Dataset/train/X_train.txt",header=FALSE)
 features <- rbind(xtest,xtrain)
 names(features) <- read.table("./UCI HAR Dataset/features.txt",header=FALSE)$V2
 
+##combine y_test and y_train into activity sub-table
 ytest <- read.table("./UCI HAR Dataset/test/y_test.txt",header=FALSE)
 ytrain <- read.table("./UCI HAR Dataset/train/y_train.txt",header=FALSE)
 activity <- rbind(ytest,ytrain)
 names(activity) <- "activity"
 
+##combine subject_test and subject_train into subject sub-table
 subjectTest <- read.table("./UCI HAR Dataset/train/subject_train.txt",header=FALSE)
 subjectTrain <- read.table("./UCI HAR Dataset/test/subject_test.txt",header=FALSE)
 subject <- rbind(subjectTest,subjectTrain)
 names(subject) <- "subject"
 
-#merges the features,subject and activity data table into one data set
+#merges the features,subject and activity sub-tables into one data set
 data <- cbind(features,subject,activity)
 
 
